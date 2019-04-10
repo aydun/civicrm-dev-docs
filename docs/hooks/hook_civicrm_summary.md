@@ -6,21 +6,21 @@ This hook is called when the contact summary is rendered, allowing you to modify
 
 ## Definition
 
-    hook_civicrm_summary( $contactID, &$content, &$contentPlacement = CRM_Utils_Hook::SUMMARY_BELOW )
+    hook_civicrm_summary($contactID, &$content, &$contentPlacement = CRM_Utils_Hook::SUMMARY_BELOW)
 
 ## Parameters
 
 -   $contactID the contactID for whom the contact summary is being
     generated
--   $contentPlacement (output parameter) where should the hook content
-    be displayed relative to the exiting content. One of
-    CRM_Utils_Hook::SUMMARY_BELOW, CRM_Utils_Hook::SUMMARY_ABOVE,
-    CRM_Utils_Hook::SUMMARY_REPLACE. Default is to add content BELOW
-    default contact summary content.
+-   $contentPlacement (output parameter) where the hook content
+    is displayed relative to the existing content. One of:
+    -  CRM_Utils_Hook::SUMMARY_BELOW (default)
+    -  CRM_Utils_Hook::SUMMARY_ABOVE
+    -  CRM_Utils_Hook::SUMMARY_REPLACE.
 
 ## Example
 
-    function civitest_civicrm_summary( $contactID, &$content, &$contentPlacement ) {
+    function civitest_civicrm_summary($contactID, &$content, &$contentPlacement) {
         // REPLACE default Contact Summary with your customized content
         $contentPlacement = CRM_Utils_Hook::SUMMARY_REPLACE;
         $content = "
